@@ -290,33 +290,37 @@ nav ul li a.active {
     box-shadow: 0 4px 10px rgba(0,0,0,0.18);
 }
 
-/* FOOTER - espelho da imagem */
+/* FOOTER */
 footer {
     background: var(--primary);
     color: var(--light);
     padding: 1.5rem 0;
     font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer-inner {
     max-width: 1280px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
 /* UFC à esquerda */
 .footer-left {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-ufc-logo {
-    height: 80px;       /* ajusta a proporção visual igual da imagem */
+    height: 80px;
     width: auto;
     object-fit: contain;
 }
@@ -325,41 +329,51 @@ footer {
 .footer-center {
     flex: 1;
     display: flex;
-    justify-content: center;   /* centraliza blocos entre UFC e NuClic */
-    gap: 4rem;                 /* espaço confortável entre colunas */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
 }
 
 .footer-column {
-    min-width: 170px;          /* garante largura suficiente pra não quebrar tudo */
+    min-width: 160px;
+    text-align: left;
 }
 
-.footer-column h4,
+.footer-column h4 {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
 .footer-column p {
-    white-space: nowrap;       /* impede quebra esquisita de linha */
+    margin: 0.15rem 0;
+    font-size: 0.85rem;
+    white-space: nowrap;
 }
 
-/* garante alinhamento limpo do bloco direito */
+/* NuClic à direita */
 .footer-right {
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     min-width: 220px;
 }
 
 .footer-nuclic-logo {
     height: 60px;
     width: auto;
-    display: block;
-    margin-left: auto;
-    object-fit: contain;
+    margin-bottom: 0.3rem;
 }
 
 .footer-nuclic-url {
     font-size: 0.8rem;
-    margin-top: 0.2rem;
+    margin-bottom: 0.4rem;
 }
 
 .footer-address {
     font-size: 0.8rem;
-    margin-top: 0.7rem;
+    line-height: 1.2;
 }
 
 /* RESPONSIVO */
@@ -369,7 +383,7 @@ footer {
     }
 
     .navbar nav ul {
-        display: none; /* aqui você pode depois trocar por menu mobile */
+        display: none;
     }
 
     .hero {
@@ -380,16 +394,10 @@ footer {
 
     .footer-inner {
         flex-direction: column;
-        align-items: flex-start;
         gap: 1.5rem;
     }
 
     .footer-center {
         flex-wrap: wrap;
-        gap: 2rem;
-    }
-
-    .footer-right {
-        text-align: left;
     }
 }

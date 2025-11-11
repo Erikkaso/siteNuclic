@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NuClic – Núcleo de Sistemas de Computação</title>
+    <title>Nuclic – Núcleo de Sistemas de Computação</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <!-- HEADER -->
@@ -13,14 +13,21 @@
         <div class="navbar">
             <div class="brand">
                 <img src="assets/logo-nuclic_2.png" alt="Nuclic logo" class="brand-logo">
-                <span>Nuclic</span>
+                <!-- <span>Nuclic</span> -->
             </div>
             <nav>
                 <ul>
-                    <li><a href="#" class="active">Início</a></li>
-                    <li><a href="#">Notícias</a></li>
-                    <li><a href="#">Ensino</a></li>
-                    <li><a href="#">Sobre Nós</a></li>
+                    <!-- Início: scroll para o topo -->
+                    <li><a href="#" class="active" id="nav-inicio">Início</a></li>
+
+                    <!-- Notícias: vai para o site oficial -->
+                    <li><a href="#" id="nav-noticias">Notícias</a></li>
+
+                    <!-- Ensino: vai para o link especificado -->
+                    <li><a href="#" id="nav-ensino">Ensino</a></li>
+
+                    <!-- Sobre Nós: scroll para seção "Sobre o Nuclic" -->
+                    <li><a href="#" id="nav-sobre">Sobre Nós</a></li>
                 </ul>
             </nav>
             <a href="#" class="tools-btn">Ferramentas</a>
@@ -46,8 +53,8 @@
             </div>
         </section>
 
-        <!-- Sobre -->
-        <section class="about">
+        <!-- Sobre (alvo do "Sobre Nós") -->
+        <section class="about" id="sobre-nos">
             <div class="about-content">
                 <div class="about-image">
                     <img src="assets/guynotebook1.png" alt="Ilustração Nuclic" class="about-illustration">
@@ -110,15 +117,17 @@
         </section>
     </main>
 
-    <!-- FOOTER (igual ao layout da imagem) -->
+    <!-- FOOTER -->
     <footer>
         <div class="footer-inner">
             <!-- UFC à esquerda -->
             <div class="footer-left">
-                <img src="assets/ufc.png" alt="Universidade Federal do Ceará - Campus Sobral" class="footer-ufc-logo">
+                <img src="assets/ufc.png"
+                     alt="Universidade Federal do Ceará - Campus Sobral"
+                     class="footer-ufc-logo">
             </div>
 
-            <!-- Menus centrais -->
+            <!-- Colunas centrais -->
             <div class="footer-center">
                 <div class="footer-column">
                     <h4>Início</h4>
@@ -149,7 +158,9 @@
 
             <!-- NuClic à direita -->
             <div class="footer-right">
-                <img src="assets/logo-nuclic_2.png" alt="Nuclic logo" class="footer-nuclic-logo">
+                <img src="assets/logo-nuclic_2.png"
+                     alt="Nuclic logo"
+                     class="footer-nuclic-logo">
                 <div class="footer-nuclic-url">www.nuclic.ufc.br</div>
                 <div class="footer-address">
                     R. Cel. Estanislau Frota, 563 – Centro, Sobral – CE – Brasil, 62010-560
