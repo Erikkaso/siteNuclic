@@ -14,20 +14,12 @@
         <div class="navbar">
             <div class="brand">
                 <img src="assets/logo-nuclic_2.png" alt="Nuclic logo" class="brand-logo">
-                <!-- <span>Nuclic</span> -->
             </div>
             <nav>
                 <ul>
-                    <!-- Início: scroll para o topo -->
                     <li><a href="#" class="active" id="nav-inicio">Início</a></li>
-
-                    <!-- Notícias: vai para o site oficial -->
                     <li><a href="#" id="nav-noticias">Notícias</a></li>
-
-                    <!-- Ensino: vai para o link especificado -->
                     <li><a href="#" id="nav-ensino">Ensino</a></li>
-
-                    <!-- Sobre Nós: scroll para seção "Sobre o Nuclic" -->
                     <li><a href="#" id="nav-sobre">Sobre Nós</a></li>
                 </ul>
             </nav>
@@ -54,7 +46,7 @@
             </div>
         </section>
 
-        <!-- Sobre (alvo do "Sobre Nós") -->
+        <!-- Sobre (alvo do "Sobre Nós") + Galeria -->
         <section class="about" id="sobre-nos">
             <div class="about-content">
                 <div class="about-image">
@@ -66,14 +58,22 @@
                     <p>Buscamos desenvolver soluções inovadoras e fortalecer a formação acadêmica por meio de projetos, publicações e parcerias estratégicas.</p>
                 </div>
             </div>
-        </section>
 
-        <!-- Imagens / Destaques -->
-        <section class="gallery">
-            <div class="gallery-inner">
-                <div class="placeholder">Imagem 1</div>
-                <div class="placeholder">Imagem 2</div>
-                <div class="placeholder">Imagem 3</div>
+            <!-- GALERIA DENTRO DA ÁREA AZUL -->
+            <div class="gallery-wrapper">
+                <!-- <h3>Galeria Nuclic</h3> -->
+                <div class="gallery-carousel">
+                    <button class="gallery-btn prev" aria-label="Imagem anterior">&#10094;</button>
+                    <div class="gallery-viewport">
+                        <div class="gallery-track">
+                            <!-- Imagens inseridas via JavaScript -->
+                        </div>
+                    </div>
+                    <button class="gallery-btn next" aria-label="Próxima imagem">&#10095;</button>
+                </div>
+                <div class="gallery-dots">
+                    <!-- Pontos inseridos via JavaScript -->
+                </div>
             </div>
         </section>
 
@@ -162,7 +162,7 @@
                 <img src="assets/logo-nuclic_2.png"
                      alt="Nuclic logo"
                      class="footer-nuclic-logo">
-                <div class="footer-nuclic-url">www.nuclic.ufc.br</div>
+                <div class="footer-nuclic-url">nuclic.ufc.br</div>
                 <div class="footer-address">
                     R. Cel. Estanislau Frota, 563 – Centro, Sobral – CE – Brasil, 62010-560
                 </div>

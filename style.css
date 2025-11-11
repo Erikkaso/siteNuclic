@@ -145,16 +145,16 @@ nav ul li a.active {
     object-fit: contain;
 }
 
-/* ABOUT */
+/* ABOUT + GALERIA */
 .about {
     background: var(--primary);
     color: var(--light);
-    padding: 4rem 1rem;
+    padding: 4rem 1rem 3rem;
 }
 
 .about-content {
     max-width: 1280px;
-    margin: 0 auto;
+    margin: 0 auto 2rem auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -182,31 +182,93 @@ nav ul li a.active {
     font-size: 2rem;
 }
 
-/* GALLERY */
-.gallery {
-    background: var(--light);
-    padding: 2rem 1rem;
-}
-
-.gallery-inner {
+/* GALERIA DENTRO DO SOBRE */
+.gallery-wrapper {
     max-width: 1280px;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+    padding: 2rem 0 0;
+    border-top: 1px solid rgba(255,255,255,0.25);
 }
 
-.gallery-inner .placeholder {
-    flex: 1 1 260px;
-    max-width: 360px;
-    height: 200px;
-    background: var(--muted);
-    border-radius: 0.5rem;
+.gallery-wrapper h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Carrossel */
+.gallery-carousel {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.gallery-btn {
+    background: rgba(255,255,255,0.12);
+    border: none;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 1.6rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #666;
+    transition: all var(--transition-fast);
+}
+
+.gallery-btn:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-1px);
+}
+
+.gallery-viewport {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 1rem;
+    background: rgba(0,0,0,0.15);
+    position: relative;
+    aspect-ratio: 16 / 9; /* garante padrão de todas as imagens */
+}
+
+.gallery-track {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.4s ease;
+}
+
+.gallery-image {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Dots */
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+}
+
+.gallery-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(255,255,255,0.35);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.gallery-dot.active {
+    width: 18px;
+    background: #ffffff;
 }
 
 /* RESEARCH */
@@ -312,7 +374,6 @@ footer {
     gap: 2rem;
 }
 
-/* UFC à esquerda */
 .footer-left {
     display: flex;
     align-items: center;
@@ -325,7 +386,6 @@ footer {
     object-fit: contain;
 }
 
-/* Colunas centrais */
 .footer-center {
     flex: 1;
     display: flex;
@@ -351,7 +411,6 @@ footer {
     white-space: nowrap;
 }
 
-/* NuClic à direita */
 .footer-right {
     display: flex;
     flex-direction: column;
@@ -390,6 +449,16 @@ footer {
         flex-direction: column;
         text-align: center;
         padding-top: 4rem;
+    }
+
+    .gallery-carousel {
+        gap: 0.4rem;
+    }
+
+    .gallery-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1.2rem;
     }
 
     .footer-inner {
