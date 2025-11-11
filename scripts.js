@@ -52,6 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+     // Contatos → nova aba
+    const navContatos = document.getElementById('nav-contatos');
+    if (navContatos) {
+        navContatos.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.open('https://linktr.ee/nuclic', '_blank');
+        });
+    }
+
     // Inicia a galeria / carrossel
     initGalleryCarousel();
 });
@@ -125,5 +134,5 @@ async function initGalleryCarousel() {
     });
 
     // Opcional: autoplay (habilite se quiser)
-    // setInterval(() => updateSlide(current + 1), 6000);
+     setInterval(() => updateSlide(current + 1), 6000);
 }
