@@ -1,173 +1,444 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuclic – Núcleo de Sistemas de Computação</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="scripts.js" defer></script>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Patrocine a ExpoIoT 2025 | Nuclic - UFC Sobral</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuração do Tailwind para usar a fonte 'Inter' -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Padrão de grade quadriculada */
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.04) 2px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.04) 2px, transparent 1px);
+            
+            background-size: 2rem 2rem; 
+        }
+
+    </style>
 </head>
-<body>
-    <!-- HEADER -->
-    <header>
-        <div class="navbar">
-            <div class="brand">
-                <img src="assets/logo-nuclic_2.png" alt="Nuclic logo" class="brand-logo">
+<body class="bg-gray-50 text-gray-900 antialiased grid-pattern">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <div class="flex items-center space-x-4">
+                <img src="/assets/logo-nuclic.svg" alt="Logo Nuclic" class="h-10 w-auto">
+                <span class="text-gray-400">|</span>
+                <img src="/assets/expoiot-logo.svg" alt="Logo ExpoIoT" class="h-10 w-auto">
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#" class="active" id="nav-inicio">Início</a></li>
-                    <li><a href="#" id="nav-noticias">Notícias</a></li>
-                    <li><a href="#" id="nav-ensino">Ensino</a></li>
-                    <li><a href="#" id="nav-sobre">Sobre Nós</a></li>
-                </ul>
-            </nav>
-            <a href="#" class="tools-btn" id="nav-contatos">Contatos</a>
-            <div class="lang-flags">
-                <img src="https://flagcdn.com/w20/br.png" alt="Português">
-                <img src="https://flagcdn.com/w20/gb.png" alt="English">
-                <img src="https://flagcdn.com/w20/es.png" alt="Español">
-            </div>
-        </div>
+            <a href="#cotas" class="hidden sm:inline-block bg-[#09c0c0] text-white font-semibold px-5 py-2 rounded-lg hover:bg-[#087373] transition-colors">
+                Ver Cotas de Patrocínio
+            </a>
+        </nav>
     </header>
 
-    <!-- MAIN -->
-    <main>
-        <!-- Hero -->
-        <section class="hero">
-            <div class="title">
-                Núcleo de<br>
-                Sistemas de<br>
-                Computação
+    <!-- ===== 1. Seção 'Hero' (Primeira Impressão) ===== -->
+    <section class="relative bg-white pt-24 pb-32 sm:pt-32 sm:pb-40 grid-pattern">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900">
+                Posicione sua marca na vanguarda da inovação em IoT.
+            </h1>
+            <p class="mt-6 text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto">
+                Seja um patrocinador da <strong class="font-semibold">ExpoIoT 2025</strong> e conecte sua empresa aos maiores talentos de tecnologia, pesquisa e desenvolvimento da Universidade Federal do Ceará.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#cotas" class="bg-[#09c0c0] text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-[#087373] transition-colors shadow-lg">
+                    Quero Patrocinar
+                </a>
+                <a href="#sobre" class="bg-gray-100 text-gray-800 font-bold text-lg px-8 py-4 rounded-lg hover:bg-gray-200 transition-colors shadow-lg">
+                    Saber Mais sobre o Evento
+                </a>
             </div>
-            <div class="hero-logo-box">
-                <img src="assets/logo-nuclic_2.png" alt="Nuclic logo" class="hero-logo">
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Sobre (alvo do "Sobre Nós") + Galeria -->
-        <section class="about" id="sobre-nos">
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="assets/guynotebook1.png" alt="Ilustração Nuclic" class="about-illustration">
+    <!-- ===== 2. Seção 'A Oportunidade' (O que é a ExpoIoT?) ===== -->
+    <section id="sobre" class="py-20 lg:py-28 bg-gray-50">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900">
+                    O que é a ExpoIoT?
+                </h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                    A ExpoIoT é o principal evento de exposição de projetos de Internet das Coisas da UFC Sobral. Reunimos dezenas de estudantes, pesquisadores e entusiastas de tecnologia para um dia de inovação, networking e apresentação de soluções que vão moldar o futuro.
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <img src="https://placehold.co/1200x600/1D4ED8/FFFFFF?text=Foto+Geral+do+Evento"
+                     onerror="this.src='https://placehold.co/1200x600/EEE/AAA?text=Foto+Geral+do+Evento'"
+                     alt="Visão geral da ExpoIoT com público e projetos"
+                     class="rounded-xl shadow-lg w-full aspect-[2/1] object-cover">
+            </div>
+            
+            <!-- Números de Destaque -->
+            <div class="mt-16 max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <span class="text-4xl lg:text-5xl font-extrabold text-blue-600">+500</span>
+                    <p class="mt-2 text-lg font-semibold text-gray-700">Visitantes na Última Edição</p>
                 </div>
-                <div class="about-text">
-                    <h2>Sobre o Nuclic</h2>
-                    <p>O Nuclic é um laboratório de pesquisa e desenvolvimento dedicado a explorar as possibilidades da tecnologia em áreas como Internet das Coisas (IoT), Inteligência Artificial e Computação em Nuvem, bem como tecnologias emergentes em redes sem fio.</p>
-                    <p>Buscamos desenvolver soluções inovadoras e fortalecer a formação acadêmica por meio de projetos, publicações e parcerias estratégicas.</p>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <span class="text-4xl lg:text-5xl font-extrabold text-blue-600">+30</span>
+                    <p class="mt-2 text-lg font-semibold text-gray-700">Projetos Expostos</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <span class="text-4xl lg:text-5xl font-extrabold text-blue-600">+10</span>
+                    <p class="mt-2 text-lg font-semibold text-gray-700">Minicursos e Palestras</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 3. Seção 'Por que Patrocinar?' (O Valor) ===== -->
+    <section class="py-20 lg:py-28 bg-white grid-pattern">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900">
+                    Por que sua empresa deve patrocinar?
+                </h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                    Ir além da visibilidade. O patrocínio à ExpoIoT é um investimento estratégico em inovação, talento e futuro.
+                </p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <!-- Card 1: Visibilidade -->
+                <div class="text-center">
+                    <div class="flex items-center justify-center h-16 w-16 bg-blue-100 rounded-xl mx-auto">
+                        <!-- Ícone SVG (Heroicons) -->
+                        <svg class="h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639l4.33-7.51a1.012 1.012 0 0 1 1.736 0l4.33 7.51a1.012 1.012 0 0 1 0 .639l-4.33 7.51a1.012 1.012 0 0 1-1.736 0l-4.33-7.51Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.036 12.322a1.012 1.012 0 0 1 0-.639l4.33-7.51a1.012 1.012 0 0 1 1.736 0l4.33 7.51a1.012 1.012 0 0 1 0 .639l-4.33 7.51a1.012 1.012 0 0 1-1.736 0l-4.33-7.51Z" />
+                        </svg>
+                    </div>
+                    <h3 class="mt-5 text-xl font-bold">Visibilidade de Marca</h3>
+                    <p class="mt-2 text-gray-600">Associe sua marca à inovação, pesquisa e à Universidade Federal do Ceará em todos os materiais de divulgação do evento.</p>
+                </div>
+                <!-- Card 2: Talentos -->
+                <div class="text-center">
+                    <div class="flex items-center justify-center h-16 w-16 bg-blue-100 rounded-xl mx-auto">
+                        <!-- Ícone SVG (Heroicons) -->
+                        <svg class="h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.001M15 19.128A9.337 9.337 0 0 1 12 21a9.337 9.337 0 0 1-3-5.872M15 19.128A9.337 9.337 0 0 0 9 18.13M3 16.06A9.337 9.337 0 0 1 12 3c1.97 0 3.824.715 5.25 1.906M3 16.06V18c0 .981.67 1.815 1.61 1.996M3 16.06A9.337 9.337 0 0 1 3 12C3 8.364 4.545 5.22 7.11 3.25M3 16.06l1.352 1.352" />
+                        </svg>
+                    </div>
+                    <h3 class="mt-5 text-xl font-bold">Acesso a Talentos</h3>
+                    <p class="mt-2 text-gray-600">Conheça e recrute os melhores alunos de Engenharia de Computação da região, prontos para inovar no mercado.</p>
+                </div>
+                <!-- Card 3: Networking -->
+                <div class="text-center">
+                    <div class="flex items-center justify-center h-16 w-16 bg-blue-100 rounded-xl mx-auto">
+                        <!-- Ícone SVG (Heroicons) -->
+                        <svg class="h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.746-1.039 4.805 4.805 0 0 0-7.491-3.696A18.707 18.707 0 0 0 12 12.72a18.707 18.707 0 0 0-4.255 1.258 4.805 4.805 0 0 0-7.491 3.696A9.094 9.094 0 0 0 6 18.72m12 0a9.094 9.094 0 0 1-3.746 1.039m3.746-1.039A9.094 9.094 0 0 1 12 21m-6 0a9.094 9.094 0 0 1-3.746-1.039m3.746 1.039A9.094 9.094 0 0 0 12 21m-6 0a9.094 9.094 0 0 0-3.746-1.039M12 12.72A18.707 18.707 0 0 1 16.255 14m-8.51 0A18.707 18.707 0 0 1 12 12.72m-4.255 1.258A4.805 4.805 0 0 1 6 12.72m0 0a4.805 4.805 0 0 1 1.509-3.696m-1.509 3.696A4.805 4.805 0 0 1 6 12.72m0 0A9.094 9.094 0 0 1 9 3.28m0 0a9.094 9.094 0 0 1 6 0m-6 0A9.094 9.094 0 0 0 3 9.28m6 0a9.094 9.094 0 0 0-3.746 1.039" />
+                        </svg>
+                    </div>
+                    <h3 class="mt-5 text-xl font-bold">Networking Estratégico</h3>
+                    <p class="mt-2 text-gray-600">Crie parcerias valiosas com professores, pesquisadores e outros líderes de empresas de tecnologia em um ambiente focado em inovação.</p>
+                </div>
+                <!-- Card 4: Liderança -->
+                <div class="text-center">
+                    <div class="flex items-center justify-center h-16 w-16 bg-blue-100 rounded-xl mx-auto">
+                        <!-- Ícone SVG (Heroicons) -->
+                        <svg class="h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1-3 3h-3a3 3 0 0 1-3-3m9 0v-3.375c0-.621-.504-1.125-1.125-1.125h-6.75C6.004 14.25 5.5 14.754 5.5 15.375V18.75m9 0h-9" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 6.75h4.5M9.75 6.75a1.5 1.5 0 0 1-1.5-1.5V5.25a1.5 1.5 0 0 1 1.5-1.5h4.5a1.5 1.5 0 0 1 1.5 1.5v.001c0 .001 0 .001 0 .001m-7.5 0h7.5m-7.5 0a1.5 1.5 0 0 0-1.5 1.5v.001c0 .001 0 .001 0 .001m-1.5-1.5H5.25m3 0V3.75m0 0A1.5 1.5 0 0 1 9 2.25h6a1.5 1.5 0 0 1 1.5 1.5v.001c0 .001 0 .001 0 .001" />
+                        </svg>
+                    </div>
+                    <h3 class="mt-5 text-xl font-bold">Liderança e Inovação</h3>
+                    <p class="mt-2 text-gray-600">Posicione sua empresa como líder e apoiadora do ecossistema de tecnologia, demonstrando seu compromisso com a P&D no Ceará.</p>
                 </div>
             </div>
 
-            <!-- GALERIA DENTRO DA ÁREA AZUL -->
-            <div class="gallery-wrapper">
-                <!-- <h3>Galeria Nuclic</h3> -->
-                <div class="gallery-carousel">
-                    <button class="gallery-btn prev" aria-label="Imagem anterior">&#10094;</button>
-                    <div class="gallery-viewport">
-                        <div class="gallery-track">
-                            <!-- Imagens inseridas via JavaScript -->
+            <!-- NOVAS IMAGENS DE SUPORTE AOS BENEFÍCIOS -->
+            <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="text-center">
+                    <img src="https://placehold.co/600x400/000000/FFFFFF?text=Visibilidade+da+Marca"
+                         onerror="this.src='https://placehold.co/600x400/EEE/AAA?text=Logo+de+Patrocinador'"
+                         alt="Logo de um patrocinador em destaque no evento"
+                         class="rounded-xl shadow-lg w-full aspect-video object-cover">
+                    <p class="mt-4 text-lg font-semibold text-gray-700">Visibilidade Real da Marca</p>
+                    <p class="text-gray-600">Nossos patrocinadores têm destaque no local do evento, materiais digitais e mídias sociais.</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://placehold.co/600x400/1D4ED8/FFFFFF?text=Networking+e+Talentos"
+                         onerror="this.src='https://placehold.co/600x400/EEE/AAA?text=Conexão+com+Talentos'"
+                         alt="Empresas se conectando com alunos e talentos"
+                         class="rounded-xl shadow-lg w-full aspect-video object-cover">
+                    <p class="mt-4 text-lg font-semibold text-gray-700">Conexão Direta com Talentos</p>
+                    <p class="text-gray-600">Converse frente a frente com os desenvolvedores e engenheiros que estão criando o futuro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 4. Seção 'Prova Social' (Fotos) ===== -->
+    <section class="py-20 lg:py-28 bg-gray-50">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900">
+                    O sucesso da última ExpoIoT
+                </h2>
+                <p class="mt-4 text-lg text-gray-600">
+                    Veja fotos da nossa última edição, que reuniu centenas de pessoas.
+                </p>
+            </div>
+            
+            <!-- Galeria de Imagens -->
+            <div class="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-6">
+                <!-- Imagem 1 -->
+                <img src="https://placehold.co/600x400/000000/FFFFFF?text=Público+Interagindo" 
+                     onerror="this.src='https://placehold.co/600x400/EEE/AAA?text=Foto+1'"
+                     alt="Público interagindo com projetos na ExpoIoT" 
+                     class="rounded-xl shadow-lg aspect-video object-cover hover:scale-105 transition-transform duration-300">
+                <!-- Imagem 2 -->
+                <img src="https://placehold.co/600x400/1D4ED8/FFFFFF?text=Alunos+Apresentando" 
+                     onerror="this.src='https://placehold.co/600x400/EEE/AAA?text=Foto+2'"
+                     alt="Alunos do Nuclic apresentando seus protótipos" 
+                     class="rounded-xl shadow-lg aspect-video object-cover hover:scale-105 transition-transform duration-300">
+                <!-- Imagem 3 -->
+                <img src="https://placehold.co/600x400/000000/FFFFFF?text=Palestras" 
+                     onerror="this.src='https://placehold.co/600x400/EEE/AAA?text=Foto+3'"
+                     alt="Palestra durante a ExpoIoT" 
+                     class="rounded-xl shadow-lg aspect-video object-cover hover:scale-105 transition-transform duration-300">
+                <!-- Imagem 4 -->
+                <img src="https://placehold.co/600x400/1D4ED8/FFFFFF?text=Networking" 
+                     onerror="this.src='https://placehold.co/600x400/EEE/AAA?text=Foto+4'"
+                     alt="Momento de networking entre empresas e alunos" 
+                     class="rounded-xl shadow-lg aspect-video object-cover hover:scale-105 transition-transform duration-300">
+                <!-- Imagem 5 -->
+                <img src="https://placehold.co/600x400/000000/FFFFFF?text=Projetos+em+Ação" 
+                     onerror="this.src='https://placehold.co/600x400/EEE/AAA?text=Foto+5'"
+                     alt="Demonstração de um projeto de IoT" 
+                     class="rounded-xl shadow-lg aspect-video object-cover hover:scale-105 transition-transform duration-300">
+                <!-- Imagem 6 -->
+                <img src="https://placehold.co/600x400/1D4ED8/FFFFFF?text=Equipe+Nuclic" 
+                     onerror="this.src='https://placehold.co/600x400/EEE/AAA?text=Foto+6'"
+                     alt="Equipe de organização do Nuclic" 
+                     class="rounded-xl shadow-lg aspect-video object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 5. Seção 'Quem Organiza' (Credibilidade Nuclic/UFC) ===== -->
+    <section class="py-20 lg:py-28 bg-white grid-pattern">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Coluna de Texto -->
+                <div>
+                    <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900">
+                        Um evento com a credibilidade do Nuclic e da UFC Sobral.
+                    </h2>
+                    <p class="mt-6 text-lg text-gray-600">
+                        A ExpoIoT é uma iniciativa do <strong>Nuclic (Núcleo de Sistemas de Computação)</strong>, o principal laboratório de pesquisa e desenvolvimento em IoT, Inteligência Artificial e Cloud Computing da Universidade Federal do Ceará - Campus Sobral.
+                    </p>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Somos formados por uma equipe de professores, doutores, mestres e alunos de engenharia de computação dedicados a criar soluções tecnológicas de ponta. Com <strong>mais de 5 anos de história</strong>, o Nuclic já desenvolveu dezenas de projetos de impacto e formou profissionais de alto nível que hoje atuam nas maiores empresas de tecnologia do país.
+                    </p>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Patrocinar a ExpoIoT é investir em um evento com selo de qualidade acadêmica e de inovação da UFC.
+                    </p>
+                </div>
+                <!-- Coluna de Logos -->
+                <div class="flex flex-row lg:flex-col gap-8 justify-center">
+                    <img src="/assets/logo-nuclic.svg"
+                         alt="Logo do Nuclic" 
+                         class="rounded-lg object-contain h-24 lg:h-32">
+                    <img src="/assets/brasao1_horizontal_cor_300dpi.png" 
+                         alt="Logo da UFC Sobral" 
+                         class="rounded-lg object-contain h-24 lg:h-32">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 6. Seção 'Cotas de Patrocínio' ===== -->
+    <section id="cotas" class="py-20 lg:py-28 bg-gray-50">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900">
+                    Escolha seu plano de patrocínio
+                </h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                    Temos opções flexíveis para garantir o máximo de retorno para sua empresa.
+                </p>
+            </div>
+
+            <!-- Grid de Preços -->
+            <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Cota Prata -->
+                <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+                    <h3 class="text-2xl font-bold text-gray-900">Cota PRATA</h3>
+                    <p class="mt-2 text-4xl font-extrabold text-gray-900">R$ 1.000</p>
+                    <p class="mt-3 text-gray-600">O ponto de partida para associar sua marca à inovação.</p>
+                    
+                    <ul class="mt-8 space-y-4 text-gray-700 flex-grow">
+                        <li class="flex items-center gap-3">
+                            <svg class="h-6 w-6 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd" /></svg>
+                            Logo no site oficial do evento (categoria Prata)
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="h-6 w-6 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd" /></svg>
+                            Logo em banners de "Apoiadores" no evento
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="h-6 w-6 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd" /></svg>
+                            Agradecimento em redes sociais
+                        </li>
+                    </ul>
+                    <a href="#contato" class="mt-10 w-full bg-gray-200 text-gray-800 font-bold py-3 px-6 rounded-lg text-center hover:bg-gray-300 transition-colors">
+                        Quero esta cota
+                    </a>
+                </div>
+
+                <!-- Cota Ouro (Destaque) -->
+                <div class="bg-white rounded-xl shadow-2xl p-8 flex flex-col relative border-4 border-blue-600">
+                    <span class="absolute top-0 -translate-y-1/2 bg-blue-600 text-white text-sm font-bold px-4 py-1 rounded-full uppercase left-1/2 -translate-x-1/2">Mais Popular</span>
+                    
+                    <h3 class="text-2xl font-bold text-blue-700">Cota OURO</h3>
+                    <p class="mt-2 text-4xl font-extrabold text-gray-900">R$ 3.000</p>
+                    <p class="mt-3 text-gray-600">Acesso direto aos talentos e máximo engajamento.</p>
+                    
+                    <ul class="mt-8 space-y-4 text-gray-700 flex-grow">
+                        <li class="flex items-center gap-3">
+                            <svg class="h-6 w-6 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd" /></svg>
+                            <strong>Todos os benefícios da Cota Prata</strong>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="h-6 w-6 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd" /></svg>
+                            Logo em destaque no banner principal do evento
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="h-6 w-6 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd" /></svg>
+                            <strong>Estande (mesa) para exposição da empresa</strong>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="h-6 w-6 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd" /></svg>
+                            Oportunidade de "Tech Talk" (palestra de 15min)
+                        </li>
+                    </ul>
+                    <a href="#contato" class="mt-10 w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-center hover:bg-blue-700 transition-colors">
+                        Quero esta cota
+                    </a>
+                </div>
+
+                <!-- Cota Diamante -->
+                <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+                    <h3 class="text-2xl font-bold text-gray-900">Cota DIAMANTE</h3>
+                    <p class="mt-2 text-4xl font-extrabold text-gray-900">R$ 5.000+</p>
+                    <p class="mt-3 text-gray-600">Posicionamento máximo como marca líder e parceira.</p>
+                    
+                    <ul class="mt-8 space-y-4 text-gray-700 flex-grow">
+                        <li class="flex items-center gap-3">
+                            <svg class="h-6 w-6 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd" /></svg>
+                            <strong>Todos os benefícios da Cota Ouro</strong>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="h-6 w-6 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd" /></svg>
+                             Logo como "Patrocinador Master" no palco
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="h-6 w-6 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd" /></svg>
+                            Tempo de fala na abertura oficial do evento
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="h-6 w-6 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd" /></svg>
+                            Participação exclusiva no "Café com Talentos"
+                        </li>
+                    </ul>
+                    <a href="#contato" class="mt-10 w-full bg-gray-200 text-gray-800 font-bold py-3 px-6 rounded-lg text-center hover:bg-gray-300 transition-colors">
+                        Quero esta cota
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 7. Seção 'Call-to-Action' (Formulário) ===== bg-gray-900 -->
+    <section id="contato" class="py-20 lg:py-28 bg-[#087373] text-white">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold tracking-tight">
+                    Vamos conversar?
+                </h2>
+                <p class="mt-4 text-lg text-white">
+                    Preencha o formulário e nossa equipe de parcerias entrará em contato para enviar a proposta completa.
+                </p>
+            </div>
+
+            <form class="mt-12 max-w-xl mx-auto" action="#" method="POST">
+                <div class="grid grid-cols-1 gap-y-6 gap-x-8">
+                    <div>
+                        <label for="nome" class="block text-sm font-semibold leading-6 text-gray-100">Nome Completo</label>
+                        <div class="mt-2.5">
+                            <input type="text" name="nome" id="nome" autocomplete="name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6" placeholder="Seu nome">
                         </div>
                     </div>
-                    <button class="gallery-btn next" aria-label="Próxima imagem">&#10095;</button>
-                </div>
-                <div class="gallery-dots">
-                    <!-- Pontos inseridos via JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Áreas de Pesquisa -->
-        <section class="research">
-            <div class="research-inner">
-                <h2>Conheça nossas áreas de pesquisa</h2>
-
-                <div class="area">
-                    <div class="area-illustration">
-                        <img src="assets/guynotebook2.png" alt="Internet das Coisas">
+                    <div>
+                        <label for="empresa" class="block text-sm font-semibold leading-6 text-gray-100">Empresa</label>
+                        <div class="mt-2.5">
+                            <input type="text" name="empresa" id="empresa" autocomplete="organization" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6" placeholder="Nome da sua empresa">
+                        </div>
                     </div>
-                    <div class="area-card">
-                        <h3>Internet das Coisas</h3>
-                        <p>A Internet das Coisas (IoT) conecta dispositivos físicos à internet para coleta e troca de dados, permitindo automação, monitoramento inteligente e tomada de decisão em tempo real.</p>
-                        <button class="btn" type="button">Saiba Mais</button>
+                    <div>
+                        <label for="email" class="block text-sm font-semibold leading-6 text-gray-100">E-mail</I></label>
+                        <div class="mt-2.5">
+                            <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6" placeholder="seu.email@empresa.com">
+                        </div>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="mensagem" class="block text-sm font-semibold leading-6 text-gray-100">Mensagem (Opcional)</label>
+                        <div class="mt-2.5">
+                            <textarea name="mensagem" id="mensagem" rows="4" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6" placeholder="Gostaria de saber mais sobre a Cota Ouro..."></textarea>
+                        </div>
                     </div>
                 </div>
+                <div class="mt-10">
+                    <button type="submit" class="block w-full rounded-md bg-blue-600 px-3.5 py-3.5 text-center text-lg font-semibold text-white shadow-lg hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+                        Enviar Interesse
+                    </button>
+                </div>
+            </form>
+            
+            <p class="mt-10 text-center text-gray-400">
+                Prefere contato direto? Envie um e-mail para <a href="mailto:nuclic@sobral.ufc.br" class="font-semibold text-white hover:text-blue-300">nuclic@sobral.ufc.br</a>
+            </p>
 
-                <div class="area area-reverse">
-                    <div class="area-illustration">
-                        <img src="assets/girlnotebook1.png" alt="Inteligência Artificial">
-                    </div>
-                    <div class="area-card">
-                        <h3>Inteligência Artificial</h3>
-                        <p>A IA envolve o desenvolvimento de algoritmos e modelos capazes de aprender com dados, reconhecer padrões e apoiar ou automatizar decisões complexas.</p>
-                        <button class="btn" type="button">Saiba Mais</button>
-                    </div>
-                </div>
-
-                <div class="area">
-                    <div class="area-illustration">
-                        <img src="assets/girlnotebook2.png" alt="Computação em Nuvem">
-                    </div>
-                    <div class="area-card">
-                        <h3>Computação em Nuvem</h3>
-                        <p>A nuvem oferece infraestrutura escalável para processamento, armazenamento e serviços distribuídos, viabilizando aplicações modernas e de alta disponibilidade.</p>
-                        <button class="btn" type="button">Saiba Mais</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-inner">
-            <!-- UFC à esquerda -->
-            <div class="footer-left">
-                <img src="assets/ufc.png"
-                     alt="Universidade Federal do Ceará - Campus Sobral"
-                     class="footer-ufc-logo">
-            </div>
-
-            <!-- Colunas centrais -->
-            <div class="footer-center">
-                <div class="footer-column">
-                    <h4>Início</h4>
-                    <p>Apresentação</p>
-                    <p>O que é IoT</p>
-                    <p>O que é Inteligência Artificial</p>
-                    <p>O que é Computação em Nuvem</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Notícias</h4>
-                    <p>Avisos</p>
-                    <p>Eventos</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Ensino</h4>
-                    <p>Tutoriais</p>
-                    <p>Aprenda IoT</p>
-                    <p>Aprenda Inteligência Artificial</p>
-                    <p>Aprenda Computação em Nuvem</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Sobre Nós</h4>
-                    <p>O NUCLIC</p>
-                    <p>Membros</p>
-                    <p>Contatos</p>
-                </div>
-            </div>
-
-            <!-- NuClic à direita -->
-            <div class="footer-right">
-                <img src="assets/logo-nuclic_2.png"
-                     alt="Nuclic logo"
-                     class="footer-nuclic-logo">
-                <div class="footer-nuclic-url">nuclic.ufc.br</div>
-                <div class="footer-address">
-                    R. Cel. Estanislau Frota, 563 – Centro, Sobral – CE – Brasil, 62010-560
-                </div>
+        </div>
+    </section>
+    <footer class="bg-gray-800 text-gray-400">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 text-center">
+            <p class="text-lg font-bold text-white">Nuclic | ExpoIoT 2025</p>
+            <p class="mt-2">© 2025 Nuclic - Núcleo de Sistemas de Computação</p>
+            <p>Universidade Federal do Ceará - Campus Sobral</p>
+            <div class="mt-6 space-x-6">
+                <a href="https://nuclic.ufc.br/pt/" target="_blank" class="hover:text-white">Site do Nuclic</a>
+                <a href="https://sobral.ufc.br/" target="_blank" class="hover:text-white">Site da UFC Sobral</a>
             </div>
         </div>
     </footer>
+
 </body>
 </html>
