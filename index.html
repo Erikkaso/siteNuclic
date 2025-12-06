@@ -825,10 +825,10 @@
                 startAuto();
             }
 
-            // ===== Formulário "Vamos conversar?" -> mailto =====
+            // ===== Formulário "Vamos conversar?" -> envio via backend =====
             const contatoForm = document.getElementById('contato-form');
             if (contatoForm) {
-                contatoForm.addEventListener('submit', function (e) {
+                contatoForm.addEventListener('submit', async function (e) {
                     e.preventDefault();
 
                     const nome = (document.getElementById('nome')?.value || '').trim();
@@ -836,22 +836,27 @@
                     const email = (document.getElementById('email')?.value || '').trim();
                     const mensagem = (document.getElementById('mensagem')?.value || '').trim();
 
-                    const linhas = [
-                        'Interesse em patrocinar a ExpoIoT 2025',
-                        '',
-                        `Nome: ${nome || '-'}`,
-                        `Empresa: ${empresa || '-'}`,
-                        `E-mail: ${email || '-'}`,
-                        '',
-                        'Mensagem:',
-                        mensagem || '(sem mensagem adicional)'
-                    ];
-
-                    const mailto = 'mailto:nuclic@sobral.ufc.br'
-                        + '?subject=' + encodeURIComponent('Interesse em Patrocinar')
-                        + '&body=' + encodeURIComponent(linhas.join('\n'));
-
-                    window.location.href = mailto;
+                    // Realiza a chamada à API backend para envio do e-mail.
+                    try {
+                        const response = await fetch('/api/send-email', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ nome, empresa, email, mensagem })
+                        });
+                        const data = await response.json();
+                        if (response.ok && data.ok) {
+                            alert('Sua mensagem foi enviada com sucesso! A equipe do Nuclic entrará em contato em breve.');
+                            // Limpa o formulário após envio bem-sucedido.
+                            contatoForm.reset();
+                        } else {
+                            throw new Error(data.error || 'Erro desconhecido');
+                        }
+                    } catch (err) {
+                        console.error('Erro ao enviar formulário de contato:', err);
+                        alert('Não foi possível enviar sua mensagem. Por favor, tente novamente mais tarde.');
+                    }
                 });
             }
         });
