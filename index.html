@@ -514,16 +514,57 @@
             </div>
 
             <!-- FORM COM ID PARA JS -->
-            <form id="contato-form" class="mt-12 max-w-xl mx-auto">
+            <form
+                id="contato-form"
+                action="https://formspree.io/f/xrbnlvgw"
+                method="POST"
+                class="mt-12 max-w-xl mx-auto"
+            >
+                <!-- Assunto padrão do e-mail enviado pelo Formspree -->
+                <input type="hidden" name="_subject" value="Novo interesse em patrocínio - ExpoIoT 2025">
+
                 <div class="grid grid-cols-1 gap-y-6 gap-x-8">
                     <div>
                         <label for="nome" class="block text-sm font-semibold leading-6 text-gray-100">Nome Completo</label>
                         <div class="mt-2.5">
                             <input type="text" name="nome" id="nome" autocomplete="name" required
-                                   class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                                   placeholder="Seu nome">
+                                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                                placeholder="Seu nome">
                         </div>
                     </div>
+                    <div>
+                        <label for="empresa" class="block text-sm font-semibold leading-6 text-gray-100">Empresa</label>
+                        <div class="mt-2.5">
+                            <input type="text" name="empresa" id="empresa" autocomplete="organization"
+                                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                                placeholder="Nome da sua empresa">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-semibold leading-6 text-gray-100">E-mail</label>
+                        <div class="mt-2.5">
+                            <input type="email" name="email" id="email" autocomplete="email" required
+                                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                                placeholder="seu.email@empresa.com">
+                        </div>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="mensagem" class="block text-sm font-semibold leading-6 text-gray-100">Mensagem (Opcional)</label>
+                        <div class="mt-2.5">
+                            <textarea name="mensagem" id="mensagem" rows="4"
+                                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                                    placeholder="Gostaria de saber mais sobre a Cota Ouro..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <button type="submit"
+                            class="block w-full rounded-md bg-blue-600 px-3.5 py-3.5 text-center text-lg font-semibold text-white shadow-lg hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+                        Enviar Interesse
+                    </button>
+                </div>
+            </form>
+
                     <div>
                         <label for="empresa" class="block text-sm font-semibold leading-6 text-gray-100">Empresa</label>
                         <div class="mt-2.5">
@@ -825,37 +866,43 @@
                 startAuto();
             }
 
-            // ===== Formulário "Vamos conversar?" -> envio via backend =====
+            // ===== Formulário "Vamos conversar?" -> envio via Formspree =====
             const contatoForm = document.getElementById('contato-form');
             if (contatoForm) {
                 contatoForm.addEventListener('submit', async function (e) {
-                    e.preventDefault();
+                    e.preventDefault(); // impede o envio padrão (que redirecionaria para o Formspree)
 
-                    const nome = (document.getElementById('nome')?.value || '').trim();
-                    const empresa = (document.getElementById('empresa')?.value || '').trim();
-                    const email = (document.getElementById('email')?.value || '').trim();
-                    const mensagem = (document.getElementById('mensagem')?.value || '').trim();
-
-                    // Realiza a chamada à API backend para envio do e-mail.
                     try {
-                        const response = await fetch('/api/send-email', {
+                        const formData = new FormData(contatoForm);
+
+                        const response = await fetch(contatoForm.action, {
                             method: 'POST',
                             headers: {
-                                'Content-Type': 'application/json'
+                                'Accept': 'application/json'
                             },
-                            body: JSON.stringify({ nome, empresa, email, mensagem })
+                            body: formData
                         });
-                        const data = await response.json();
-                        if (response.ok && data.ok) {
+
+                        if (response.ok) {
                             alert('Sua mensagem foi enviada com sucesso! A equipe do Nuclic entrará em contato em breve.');
-                            // Limpa o formulário após envio bem-sucedido.
                             contatoForm.reset();
                         } else {
-                            throw new Error(data.error || 'Erro desconhecido');
+                            let errorMessage = 'Não foi possível enviar sua mensagem. Por favor, tente novamente mais tarde.';
+
+                            try {
+                                const data = await response.json();
+                                if (data && data.errors && data.errors.length > 0) {
+                                    errorMessage = data.errors.map(err => err.message).join(', ');
+                                }
+                            } catch (_) {
+                                // se não conseguir ler JSON, mantém a mensagem padrão
+                            }
+
+                            alert(errorMessage);
                         }
                     } catch (err) {
                         console.error('Erro ao enviar formulário de contato:', err);
-                        alert('Não foi possível enviar sua mensagem. Por favor, tente novamente mais tarde.');
+                        alert('Não foi possível enviar sua mensagem. Verifique sua conexão e tente novamente.');
                     }
                 });
             }
