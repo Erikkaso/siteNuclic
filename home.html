@@ -116,7 +116,7 @@
                 <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 fade-in-on-scroll">
                     Por que sua empresa deve patrocinar?
                 </h2>
-            <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto fade-in-on-scroll">
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto fade-in-on-scroll">
                     Ir além da visibilidade. O patrocínio à ExpoIoT é um investimento estratégico em inovação, talento e futuro.
                 </p>
             </div>
@@ -243,6 +243,7 @@
                                  class="rounded-xl shadow-lg w-full aspect-video object-cover cursor-pointer"
                                  data-gallery="expo">
                         </div>
+
                         <!-- Slide 7 -->
                         <div class="min-w-full px-1">
                             <img src="assets/home/img1.webp" 
@@ -251,14 +252,16 @@
                                  class="rounded-xl shadow-lg w-full aspect-video object-cover cursor-pointer"
                                  data-gallery="expo">
                         </div>
+
                         <!-- Slide 8 -->
                         <div class="min-w-full px-1">
                             <img src="assets/home/img2.webp" 
                                  onerror="this.src='https://placehold.co/600x400/EEE/AAA?text=Foto+8'"
-                                 alt="Visitantes conferindo os projetos da ExpoIoT" 
+                                 alt="Equipe apresentando seu protótipo na ExpoIoT" 
                                  class="rounded-xl shadow-lg w-full aspect-video object-cover cursor-pointer"
                                  data-gallery="expo">
                         </div>
+
                         <!-- Slide 9 -->
                         <div class="min-w-full px-1">
                             <img src="assets/home/img3.webp" 
@@ -267,6 +270,7 @@
                                  class="rounded-xl shadow-lg w-full aspect-video object-cover cursor-pointer"
                                  data-gallery="expo">
                         </div>
+
                         <!-- Slide 10 -->
                         <div class="min-w-full px-1">
                             <img src="assets/home/img4.webp" 
@@ -325,14 +329,13 @@
                         Patrocinar a ExpoIoT é investir em um evento com selo de qualidade acadêmica e de inovação da UFC.
                     </p>
                 </div>
-                <!-- LOGOS AJUSTADAS PARA MOBILE -->
-                <div class="flex flex-row flex-wrap items-center justify-center gap-8 max-w-full">
+                <div class="flex flex-row lg:flex-col gap-8 justify-center">
                     <img src="/assets/logo-nuclic.svg"
                          alt="Logo do Nuclic" 
-                         class="rounded-lg object-contain h-20 sm:h-24 lg:h-28 max-w-full fade-in-on-scroll">
+                         class="rounded-lg object-contain h-24 lg:h-32 fade-in-on-scroll">
                     <img src="/assets/brasao1_horizontal_cor_300dpi.png" 
                          alt="Logo da UFC Sobral" 
-                         class="rounded-lg object-contain h-20 sm:h-24 lg:h-28 max-w-full fade-in-on-scroll">
+                         class="rounded-lg object-contain h-24 lg:h-32 fade-in-on-scroll">
                 </div>
             </div>
         </div>
@@ -473,7 +476,7 @@
                     </a>
                 </div>
 
-            <!-- Diamante -->
+                <!-- Diamante -->
                 <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col fade-in-on-scroll">
                     <h3 class="text-2xl font-bold text-gray-900">Cota DIAMANTE</h3>
                     <p class="mt-2 text-4xl font-extrabold text-gray-900">R$ 500+</p>
@@ -513,45 +516,36 @@
                 </p>
             </div>
 
-            <!-- FORM COM ID PARA JS -->
-            <form id="contato-form" class="mt-12 max-w-xl mx-auto">
+            <!-- IMPORTANTE: id="contact-form" e names corretos para o backend -->
+            <form id="contact-form" class="mt-12 max-w-xl mx-auto" method="POST">
                 <div class="grid grid-cols-1 gap-y-6 gap-x-8">
                     <div>
                         <label for="nome" class="block text-sm font-semibold leading-6 text-gray-100">Nome Completo</label>
                         <div class="mt-2.5">
-                            <input type="text" name="nome" id="nome" autocomplete="name" required
-                                   class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                                   placeholder="Seu nome">
+                            <input type="text" name="nome" id="nome" autocomplete="name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6" placeholder="Seu nome">
                         </div>
                     </div>
                     <div>
                         <label for="empresa" class="block text-sm font-semibold leading-6 text-gray-100">Empresa</label>
                         <div class="mt-2.5">
-                            <input type="text" name="empresa" id="empresa" autocomplete="organization"
-                                   class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                                   placeholder="Nome da sua empresa">
+                            <input type="text" name="empresa" id="empresa" autocomplete="organization" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6" placeholder="Nome da sua empresa">
                         </div>
                     </div>
                     <div>
                         <label for="email" class="block text-sm font-semibold leading-6 text-gray-100">E-mail</label>
                         <div class="mt-2.5">
-                            <input type="email" name="email" id="email" autocomplete="email" required
-                                   class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                                   placeholder="seu.email@empresa.com">
+                            <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6" placeholder="seu.email@empresa.com">
                         </div>
                     </div>
                     <div class="sm:col-span-2">
                         <label for="mensagem" class="block text-sm font-semibold leading-6 text-gray-100">Mensagem (Opcional)</label>
                         <div class="mt-2.5">
-                            <textarea name="mensagem" id="mensagem" rows="4"
-                                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                                      placeholder="Gostaria de saber mais sobre a Cota Ouro..."></textarea>
+                            <textarea name="mensagem" id="mensagem" rows="4" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6" placeholder="Gostaria de saber mais sobre a Cota Ouro..."></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="mt-10">
-                    <button type="submit"
-                            class="block w-full rounded-md bg-blue-600 px-3.5 py-3.5 text-center text-lg font-semibold text-white shadow-lg hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+                    <button type="submit" class="block w-full rounded-md bg-blue-600 px-3.5 py-3.5 text-center text-lg font-semibold text-white shadow-lg hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
                         Enviar Interesse
                     </button>
                 </div>
@@ -825,33 +819,44 @@
                 startAuto();
             }
 
-            // ===== Formulário "Vamos conversar?" -> mailto =====
-            const contatoForm = document.getElementById('contato-form');
-            if (contatoForm) {
-                contatoForm.addEventListener('submit', function (e) {
-                    e.preventDefault();
+            // ===== Envio do formulário de contato para o backend =====
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function (event) {
+                    event.preventDefault();
 
-                    const nome = (document.getElementById('nome')?.value || '').trim();
-                    const empresa = (document.getElementById('empresa')?.value || '').trim();
-                    const email = (document.getElementById('email')?.value || '').trim();
-                    const mensagem = (document.getElementById('mensagem')?.value || '').trim();
+                    const formData = new FormData(contactForm);
+                    const payload = {
+                        nome: (formData.get('nome') || '').toString().trim(),
+                        empresa: (formData.get('empresa') || '').toString().trim(),
+                        email: (formData.get('email') || '').toString().trim(),
+                        mensagem: (formData.get('mensagem') || '').toString().trim()
+                    };
 
-                    const linhas = [
-                        'Interesse em patrocinar a ExpoIoT 2025',
-                        '',
-                        `Nome: ${nome || '-'}`,
-                        `Empresa: ${empresa || '-'}`,
-                        `E-mail: ${email || '-'}`,
-                        '',
-                        'Mensagem:',
-                        mensagem || '(sem mensagem adicional)'
-                    ];
+                    if (!payload.nome || !payload.empresa || !payload.email) {
+                        alert('Por favor, preencha Nome, Empresa e E-mail.');
+                        return;
+                    }
 
-                    const mailto = 'mailto:nuclic@sobral.ufc.br'
-                        + '?subject=' + encodeURIComponent('Interesse em Patrocinar')
-                        + '&body=' + encodeURIComponent(linhas.join('\n'));
+                    try {
+                        const response = await fetch('/api/send-email', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(payload)
+                        });
 
-                    window.location.href = mailto;
+                        if (!response.ok) {
+                            throw new Error('Erro ao enviar');
+                        }
+
+                        alert('Interesse enviado com sucesso! Em breve a equipe do Nuclic entrará em contato.');
+                        contactForm.reset();
+                    } catch (error) {
+                        console.error(error);
+                        alert('Ocorreu um erro ao enviar seu interesse. Tente novamente em alguns instantes ou envie um e-mail diretamente para nuclic@sobral.ufc.br.');
+                    }
                 });
             }
         });
