@@ -1,0 +1,24 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Fundo quadriculado leve */
+.grid-pattern {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.04) 2px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.04) 2px, transparent 1px);
+    background-size: 2rem 2rem;
+}
+
+/* Animação de fade-in ao rolar a página */
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* Quando o IntersectionObserver marcar como visível */
+.fade-in-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

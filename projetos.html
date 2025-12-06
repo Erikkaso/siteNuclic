@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Projetos Nuclic – ExpoIoT 2025</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- CSS de animação e background -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Fundo quadriculado leve */
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.04) 2px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.04) 2px, transparent 1px);
+            background-size: 2rem 2rem;
+        }
+
+        /* Fade-in on load (para o título e subtítulo do hero) */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(16px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .fade-in-up-delay {
+            opacity: 0;
+            transform: translateY(18px);
+            animation: fadeInUp 0.8s ease-out 0.15s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Fade-in on scroll (para os cards e blocos de texto) */
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .fade-in-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased grid-pattern">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <div class="flex items-center space-x-4">
+                <a href="index.html">
+                    <img src="assets/logo-nuclic.svg"
+                         alt="Logo Nuclic"
+                         class="h-10 w-auto rounded-md shadow-md fade-in-on-scroll">
+                </a>
+                <span class="text-gray-400">|</span>
+                <a href="index.html">
+                    <img src="assets/expoiot-logo.svg"
+                         alt="Logo ExpoIoT"
+                         class="h-10 w-auto rounded-md fade-in-on-scroll">
+                </a>
+            </div>
+            <div class="flex items-center space-x-2">
+                <a href="index.html"
+                   class="hidden sm:inline-block bg-[#09c0c0] text-white font-semibold px-5 py-2 rounded-lg hover:bg-[#087373] transition-colors fade-in-on-scroll">
+                    Home
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative bg-white pt-24 pb-20 sm:pt-32 sm:pb-32 grid-pattern text-center">
+        <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 fade-in-up">
+                Projetos Nuclic
+            </h1>
+            <p class="mt-6 text-xl lg:text-2xl text-gray-600 fade-in-up-delay">
+                Conheça alguns dos projetos inovadores desenvolvidos pela nossa equipe.
+            </p>
+        </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="py-20 lg:py-28 bg-gray-50">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
+
+            <!-- CÉLULA DE ROBÓTICA -->
+            <article id="celula-robotica" class="bg-white rounded-2xl shadow-xl p-6 lg:p-10 fade-in-on-scroll">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                    <!-- Texto -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">
+                            Célula de Estudo em Robótica
+                        </h2>
+
+                        <p class="mt-4 text-gray-700 text-base lg:text-lg">
+                            A Célula de Estudo em Robótica do Nuclic nasceu para preencher uma lacuna no
+                            ensino de robótica dentro da universidade e aproximar os alunos da realidade de
+                            sistemas de automação, robôs móveis e linhas de produção inteligentes. É um espaço
+                            contínuo de formação, onde teoria e prática caminham juntas.
+                        </p>
+
+                        <p class="mt-3 text-gray-700 text-base lg:text-lg">
+                            Ao longo dos encontros semanais, os membros participam de módulos temáticos,
+                            estudando desde eletrônica básica até controle de motores, sensores, protocolos
+                            de comunicação e integração com plataformas embarcadas como Arduino e ESP32.
+                            Cada ciclo de estudos é acompanhado de desafios práticos, projetos em equipe e
+                            apresentação de resultados em reuniões internas e, muitas vezes, na própria
+                            ExpoIoT.
+                        </p>
+
+                        <p class="mt-3 text-gray-700 text-base lg:text-lg">
+                            A célula também atua como ponte para quem quer ir além: preparação para
+                            competições, projetos de pesquisa, desenvolvimento de rovers, braços robóticos
+                            e robôs seguidores de linha, sempre com o suporte de orientadores e auxiliares
+                            que acompanham de perto a evolução dos membros.
+                        </p>
+
+                        <div class="mt-6">
+                            <h3 class="text-sm font-semibold tracking-wide text-gray-500 uppercase">
+                                O que você encontra na Célula
+                            </h3>
+                            <ul class="mt-3 space-y-2 text-gray-700 text-sm lg:text-base">
+                                <li>• Encontros semanais com temas estruturados em módulos teórico–práticos.</li>
+                                <li>• Grupos em diferentes níveis (iniciantes e avançados) para acompanhar o ritmo de cada pessoa.</li>
+                                <li>• Projetos práticos como rovers exploradores, robôs seguidores de linha e braços robóticos.</li>
+                                <li>• Ambiente colaborativo com suporte de orientadores e auxiliares.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Imagens -->
+                    <div class="flex flex-col h-full">
+                        <div class="p-1 bg-white rounded-2xl shadow-lg fade-in-on-scroll">
+                            <div class="w-full h-80 sm:h-96 lg:h-[26rem] overflow-hidden rounded-xl">
+                                <img
+                                    src="assets/projetos/celula-robotica/celula-robotica-rovers-mesa.webp"
+                                    alt="Protótipos de robôs móveis da Célula de Robótica sobre a bancada, com notebook e instrumentos de medição."
+                                    class="w-full h-full object-cover cursor-pointer"
+                                    loading="lazy"
+                                    decoding="async"
+                                    data-gallery="celula-robotica"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="mt-4 grid grid-cols-3 gap-4 flex-1">
+                            <div class="p-1 bg-white rounded-2xl shadow-md fade-in-on-scroll">
+                                <div class="w-full h-full overflow-hidden rounded-xl">
+                                    <img
+                                        src="assets/projetos/celula-robotica/celula-robotica-aula-01.webp"
+                                        alt="Encontro da Célula de Robótica com apresentação em sala de aula."
+                                        class="w-full h-full object-cover cursor-pointer"
+                                        loading="lazy"
+                                        decoding="async"
+                                        data-gallery="celula-robotica"
+                                    >
+                                </div>
+                            </div>
+                            <div class="p-1 bg-white rounded-2xl shadow-md fade-in-on-scroll">
+                                <div class="w-full h-full overflow-hidden rounded-xl">
+                                    <img
+                                        src="assets/projetos/celula-robotica/celula-robotica-aula-02.webp"
+                                        alt="Alunos participando de aula prática de robótica, com dúvidas e interação."
+                                        class="w-full h-full object-cover cursor-pointer"
+                                        loading="lazy"
+                                        decoding="async"
+                                        data-gallery="celula-robotica"
+                                    >
+                                </div>
+                            </div>
+                            <div class="p-1 bg-white rounded-2xl shadow-md fade-in-on-scroll">
+                                <div class="w-full h-full overflow-hidden rounded-xl">
+                                    <img
+                                        src="assets/projetos/celula-robotica/celula-robotica-lab-01.webp"
+                                        alt="Integrantes do Nuclic trabalhando em protoboard e Arduino no laboratório."
+                                        class="w-full h-full object-cover cursor-pointer"
+                                        loading="lazy"
+                                        decoding="async"
+                                        data-gallery="celula-robotica"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- RADAR DAS ÁGUAS -->
+            <article class="bg-white rounded-2xl shadow-xl p-6 lg:p-10 fade-in-on-scroll">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">
+                            Radar das Águas
+                        </h2>
+                        <p class="mt-4 text-gray-700 text-base lg:text-lg">
+                            O Radar das Águas é um sistema de monitoramento hídrico desenvolvido pelo Nuclic para apoiar o
+                            acompanhamento de cheias e variações de nível em rios, açudes e outros pontos críticos da cidade de Sobral.
+                            O projeto tem como foco a criação de sensores IoT capazes de medir continuamente o nível e o fluxo
+                            da água, instalados em locais estratégicos e integrados a uma plataforma em nuvem.
+                        </p>
+
+                        <p class="mt-3 text-gray-700 text-base lg:text-lg">
+                            Na prática, os sensores captam a distância até a superfície da água e enviam os dados por rádio
+                            para um nó concentrador baseado em ESP8266/ESP32, que faz a retransmissão via internet para um
+                            servidor. A partir daí, as informações são armazenadas em banco de dados e visualizadas em
+                            dashboards e relatórios, permitindo que as equipes técnicas identifiquem tendências, emitam
+                            alertas e planejem ações preventivas com base em medições em tempo quase real.
+                        </p>
+
+                        <div class="mt-6">
+                            <h3 class="text-sm font-semibold tracking-wide text-gray-500 uppercase">
+                                Destaques técnicos
+                            </h3>
+                            <ul class="mt-3 space-y-2 text-gray-700 text-sm lg:text-base">
+                                <li>• Sensoriamento com módulos ultrassônicos HC-SR04 e sensores a laser VL53L0X para medição de nível e fluxo de água.</li>
+                                <li>• Comunicação sem fio de baixo custo utilizando rádios na faixa de 433&nbsp;MHz integrados a microcontroladores Arduino e ESP8266/ESP32.</li>
+                                <li>• Transmissão de dados via Wi-Fi/TCP-IP para servidor em nuvem com uso de protocolo MQTT (Mosquitto) e bancos de dados como MySQL ou MongoDB.</li>
+                                <li>• Visualização por meio de dashboards e análises em ferramentas como Excel e Power&nbsp;BI, facilitando a tomada de decisão pelos órgãos responsáveis.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col h-full">
+                        <div class="p-1 bg-white rounded-2xl shadow-lg fade-in-on-scroll">
+                            <div class="w-full h-80 sm:h-96 lg:h-[26rem] overflow-hidden rounded-xl">
+                                <img
+                                    src="assets/radar_aguas.png"
+                                    alt="Interface ou hardware do Radar das Águas."
+                                    class="w-full h-full object-cover cursor-pointer"
+                                    loading="lazy"
+                                    decoding="async"
+                                    data-gallery="radar-aguas"
+                                >
+                            </div>
+                        </div>
+                        <div class="mt-4 grid grid-cols-3 gap-4 flex-1">
+                            <div class="p-1 bg-white rounded-2xl shadow-md fade-in-on-scroll">
+                                <div class="w-full h-full overflow-hidden rounded-xl">
+                                    <img
+                                        src="assets/radar_aguas.png"
+                                        alt="Detalhe dos sensores do Radar das Águas."
+                                        class="w-full h-full object-cover cursor-pointer"
+                                        loading="lazy"
+                                        decoding="async"
+                                        data-gallery="radar-aguas"
+                                    >
+                                </div>
+                            </div>
+                            <div class="p-1 bg-white rounded-2xl shadow-md fade-in-on-scroll">
+                                <div class="w-full h-full overflow-hidden rounded-xl">
+                                    <img
+                                        src="assets/radar_aguas.png"
+                                        alt="Visualização gráfica do Radar das Águas."
+                                        class="w-full h-full object-cover cursor-pointer"
+                                        loading="lazy"
+                                        decoding="async"
+                                        data-gallery="radar-aguas"
+                                    >
+                                </div>
+                            </div>
+                            <div class="p-1 bg-white rounded-2xl shadow-md fade-in-on-scroll">
+                                <div class="w-full h-full overflow-hidden rounded-xl">
+                                    <img
+                                        src="assets/radar_aguas.png"
+                                        alt="Outro ângulo do sistema Radar das Águas."
+                                        class="w-full h-full object-cover cursor-pointer"
+                                        loading="lazy"
+                                        decoding="async"
+                                        data-gallery="radar-aguas"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ALPHALIBRAS -->
+            <article class="bg-white rounded-2xl shadow-xl p-6 lg:p-10 fade-in-on-scroll">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">
+                            AlphaLibras
+                        </h2>
+                        <p class="mt-4 text-gray-700 text-base lg:text-lg">
+                            O AlphaLibras é uma solução de acessibilidade que utiliza visão computacional
+                            e redes neurais para reconhecer sinais de Libras e traduzir para texto e voz
+                            em tempo quase real. O objetivo é facilitar a comunicação entre pessoas surdas
+                            e ouvintes em diferentes contextos.
+                        </p>
+                        <p class="mt-3 text-gray-700 text-base lg:text-lg">
+                            O projeto tem forte viés social e é desenvolvido em parceria com a comunidade,
+                            buscando usabilidade e impacto real no dia a dia.
+                        </p>
+
+                        <div class="mt-6">
+                            <h3 class="text-sm font-semibold tracking-wide text-gray-500 uppercase">
+                                Destaques técnicos
+                            </h3>
+                            <ul class="mt-3 space-y-2 text-gray-700 text-sm lg:text-base">
+                                <li>• Modelos de visão computacional para reconhecimento de sinais.</li>
+                                <li>• Interface intuitiva para uso em desktops ou dispositivos móveis.</li>
+                                <li>• Foco em acessibilidade, inclusão e experiência do usuário.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col h-full">
+                        <div class="p-1 bg-white rounded-2xl shadow-lg fade-in-on-scroll">
+                            <div class="w-full h-80 sm:h-96 lg:h-[26rem] overflow-hidden rounded-xl">
+                                <img
+                                    src="assets/projetos/alfalibras/libra1.webp"
+                                    alt="Interface do AlphaLibras em funcionamento."
+                                    class="w-full h-full object-cover cursor-pointer"
+                                    loading="lazy"
+                                    decoding="async"
+                                    data-gallery="alphalibras"
+                                >
+                            </div>
+                        </div>
+                        <div class="mt-4 grid grid-cols-3 gap-4 flex-1">
+                            <div class="p-1 bg-white rounded-2xl shadow-md fade-in-on-scroll">
+                                <div class="w-full h-full overflow-hidden rounded-xl">
+                                    <img
+                                        src="assets/projetos/alfalibras/libra2.webp"
+                                        alt="Demonstração do AlphaLibras."
+                                        class="w-full h-full object-cover cursor-pointer"
+                                        loading="lazy"
+                                        decoding="async"
+                                        data-gallery="alphalibras"
+                                    >
+                                </div>
+                            </div>
+                            <div class="p-1 bg-white rounded-2xl shadow-md fade-in-on-scroll">
+                                <div class="w-full h-full overflow-hidden rounded-xl">
+                                    <img
+                                        src="assets/projetos/alfalibras/libra3.webp"
+                                        alt="Tela complementar do AlphaLibras."
+                                        class="w-full h-full object-cover cursor-pointer"
+                                        loading="lazy"
+                                        decoding="async"
+                                        data-gallery="alphalibras"
+                                    >
+                                </div>
+                            </div>
+                            <div class="p-1 bg-white rounded-2xl shadow-md fade-in-on-scroll">
+                                <div class="w-full h-full overflow-hidden rounded-xl">
+                                    <img
+                                        src="assets/alphalibras.png"
+                                        alt="Outro ângulo da interface AlphaLibras."
+                                        class="w-full h-full object-cover cursor-pointer"
+                                        loading="lazy"
+                                        decoding="async"
+                                        data-gallery="alphalibras"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- FLIPERAMA -->
+            <article class="bg-white rounded-2xl shadow-xl p-6 lg:p-10 fade-in-on-scroll">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">
+                            Nuclic Arcade
+                        </h2>
+                        <p class="mt-4 text-gray-700 text-base lg:text-lg">
+                            O Nuclic Arcade é um fliperama sem fins lucrativos que está em desenvolvimento pelo grupo NUCLIC, utilizando o sistema operacional BatoceraOS, 
+                            com a finalidade de oferecer aos alunos da UFC um espaço de recreação, descanso mental e integração entre os cursos.
+                        </p>
+                        <p class="mt-3 text-gray-700 text-base lg:text-lg">
+                            Instalado em ambientes de convivência e eventos da universidade, o fliperama aproxima os estudantes do universo dos jogos 
+                            retrô e contemporâneos de forma acessível e colaborativa.
+                        </p>
+
+                        <div class="mt-6">
+                            <h3 class="text-sm font-semibold tracking-wide text-gray-500 uppercase">
+                                Destaques técnicos
+                            </h3>
+                            <ul class="mt-3 space-y-2 text-gray-700 text-sm lg:text-base">
+                                <li>• Desenvolvido com hardware livre e componentes de baixo custo.</li>
+                                <li>• Biblioteca de jogos voltada à recreação dos alunos da UFC.</li>
+                                <li>• Projeto comunitário e sem fins lucrativos, mantido pelo grupo NUCLIC.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col h-full">
+                        <div class="p-1 bg-white rounded-2xl shadow-lg fade-in-on-scroll">
+                            <div class="w-full h-80 sm:h-96 lg:h-[26rem] overflow-hidden rounded-xl">
+                                <img
+                                    src="assets/projetos/fliperama/nuclicarcade.webp"
+                                    alt="Logo do Fliperama."
+                                    class="w-full h-full object-cover cursor-pointer"
+                                    loading="lazy"
+                                    decoding="async"
+                                    data-gallery="fliperama"
+                                >
+                            </div>
+                        </div>
+                        <div class="mt-4 grid grid-cols-3 gap-4 flex-1">
+                            <div class="p-1 bg-white rounded-2xl shadow-md fade-in-on-scroll">
+                                <div class="w-full h-full overflow-hidden rounded-xl">
+                                    <img
+                                        src="assets/projetos/fliperama/projetofliperama.webp"
+                                        alt="Projeto arquitetural do Fliperama."
+                                        class="w-full h-full object-cover cursor-pointer"
+                                        loading="lazy"
+                                        decoding="async"
+                                        data-gallery="fliperama"
+                                    >
+                                </div>
+                            </div>
+                            <div class="p-1 bg-white rounded-2xl shadow-md fade-in-on-scroll">
+                                <div class="w-full h-full overflow-hidden rounded-xl">
+                                    <img
+                                        src="assets/projetos/fliperama/computronillustracao.webp"
+                                        alt="Ilustração de como será o resultado final."
+                                        class="w-full h-full object-cover cursor-pointer"
+                                        loading="lazy"
+                                        decoding="async"
+                                        data-gallery="fliperama"
+                                    >
+                                </div>
+                            </div>
+                            <div class="p-1 bg-white rounded-2xl shadow-md fade-in-on-scroll">
+                                <div class="w-full h-full overflow-hidden rounded-xl">
+                                    <img
+                                        src="assets/projetos/fliperama/batocera.webp"
+                                        alt="Interface do software."
+                                        class="w-full h-full object-cover cursor-pointer"
+                                        loading="lazy"
+                                        decoding="async"
+                                        data-gallery="fliperama"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- E MUITOS OUTROS -->
+            <div class="mt-10 fade-in-on-scroll">
+                <div class="bg-white border border-dashed border-gray-300 rounded-2xl px-6 py-10 lg:px-10 lg:py-12 text-center shadow-sm">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 uppercase">
+                        E MUITOS OUTROS!
+                    </h2>
+                    <p class="mt-4 text-base lg:text-lg text-gray-700 max-w-2xl mx-auto">
+                        Estes são apenas alguns exemplos. O Nuclic mantém uma linha contínua de projetos em
+                        Internet das Coisas, Inteligência Artificial, Cloud Computing, robótica, acessibilidade
+                        e educação em tecnologia.
+                    </p>
+                    <p class="mt-2 text-base lg:text-lg text-gray-700 max-w-2xl mx-auto">
+                        Se a sua empresa ou instituição deseja apoiar, cocriar ou conhecer mais projetos,
+                        entre em contato com nossa equipe e vamos construir algo juntos.
+                    </p>
+                    <a href="index.html#contato"
+                       class="mt-8 inline-flex items-center bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                        Fale Conosco
+                    </a>
+                </div>
+            </div>
+
+            <!-- Voltar -->
+            <div class="mt-16 text-center fade-in-on-scroll">
+                <a href="index.html"
+                   class="inline-block bg-gray-900 text-white font-bold px-6 py-3 rounded-lg hover:bg-black transition-colors">
+                    Voltar ao início
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox / Carrossel fullscreen -->
+    <div id="lightbox"
+         class="fixed inset-0 z-[9999] bg-black bg-opacity-90 hidden">
+        <div class="h-full w-full flex items-center justify-center px-4 relative">
+            <!-- Fechar -->
+            <button id="lightbox-close"
+                    type="button"
+                    class="absolute top-4 right-4 text-gray-300 hover:text-white bg-black/40 rounded-full p-2">
+                <span class="sr-only">Fechar</span>
+                ✕
+            </button>
+
+            <!-- Prev -->
+            <button id="lightbox-prev"
+                    type="button"
+                    class="absolute left-4 md:left-8 text-gray-300 hover:text-white bg-black/40 rounded-full p-3">
+                <span class="sr-only">Anterior</span>
+                ‹
+            </button>
+
+            <!-- Next -->
+            <button id="lightbox-next"
+                    type="button"
+                    class="absolute right-4 md:right-8 text-gray-300 hover:text-white bg-black/40 rounded-full p-3">
+                <span class="sr-only">Próxima</span>
+                ›
+            </button>
+
+            <!-- Conteúdo -->
+            <div class="max-w-5xl w-full flex flex-col items-center">
+                <img id="lightbox-image"
+                     src=""
+                     alt=""
+                     class="max-h-[80vh] w-auto object-contain rounded-lg shadow-2xl">
+                <p id="lightbox-caption"
+                   class="mt-4 text-gray-200 text-sm text-center max-w-2xl"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 text-center">
+            <p class="text-lg font-bold text-white">Nuclic | ExpoIoT 2025</p>
+            <p class="mt-2">© 2025 Nuclic - Núcleo de Sistemas de Computação</p>
+            <p>Universidade Federal do Ceará - Campus Sobral</p>
+            <div class="mt-6 space-x-6">
+                <a href="index.html" class="hover:text-white">Página Inicial</a>
+                <a href="index.html#cotas" class="hover:text-white">Cotas de Patrocínio</a>
+                <a href="mailto:nuclic@sobral.ufc.br" class="hover:text-white">Contato</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script: Lightbox + animação de fade-on-scroll -->
+    <script>
+        (function () {
+            const lightbox = document.getElementById('lightbox');
+            const imgEl = document.getElementById('lightbox-image');
+            const captionEl = document.getElementById('lightbox-caption');
+            const closeBtn = document.getElementById('lightbox-close');
+            const prevBtn = document.getElementById('lightbox-prev');
+            const nextBtn = document.getElementById('lightbox-next');
+
+            if (!lightbox || !imgEl) return;
+
+            const groups = {};
+            let currentGroup = null;
+            let currentIndex = 0;
+
+            const imgs = document.querySelectorAll('img[data-gallery]');
+            imgs.forEach(img => {
+                const group = img.dataset.gallery;
+                if (!groups[group]) groups[group] = [];
+                groups[group].push(img);
+
+                img.addEventListener('click', () => {
+                    currentGroup = group;
+                    currentIndex = groups[group].indexOf(img);
+                    openLightbox();
+                });
+            });
+
+            function openLightbox() {
+                updateLightboxImage();
+                lightbox.classList.remove('hidden');
+            }
+
+            function closeLightbox() {
+                lightbox.classList.add('hidden');
+            }
+
+            function updateLightboxImage() {
+                if (!currentGroup) return;
+                const arr = groups[currentGroup];
+                if (!arr || !arr.length) return;
+                if (currentIndex < 0) currentIndex = arr.length - 1;
+                if (currentIndex >= arr.length) currentIndex = 0;
+
+                const img = arr[currentIndex];
+                imgEl.src = img.src;
+                imgEl.alt = img.alt || '';
+                captionEl.textContent = img.alt || '';
+            }
+
+            function showNext(delta) {
+                if (!currentGroup) return;
+                currentIndex += delta;
+                updateLightboxImage();
+            }
+
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', () => showNext(-1));
+            nextBtn.addEventListener('click', () => showNext(1));
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (lightbox.classList.contains('hidden')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') showNext(1);
+                if (e.key === 'ArrowLeft') showNext(-1);
+            });
+        })();
+
+        // Fade-in on scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const faders = document.querySelectorAll('.fade-in-on-scroll');
+
+            if ('IntersectionObserver' in window) {
+                const fadeObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 });
+
+                faders.forEach(el => fadeObserver.observe(el));
+            } else {
+                // fallback simples
+                faders.forEach(el => el.classList.add('is-visible'));
+            }
+        });
+    </script>
+</body>
+</html>
