@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  traefik:
+    image: traefik:v3.0
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  nuclic-website:
+    build: .
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nuclic.rule=Host(`localhost`)"
+      - "traefik.http.routers.nuclic.entrypoints=web"
+      - "traefik.http.services.nuclic.loadbalancer.server.port=80"
+      - "traefik.http.middlewares.nuclic-headers.headers.frameDeny=true"
+      - "traefik.http.middlewares.nuclic-headers.headers.contentTypeNosniff=true"
+      - "traefik.http.middlewares.nuclic-headers.headers.browserXssFilter=true"
+      - "traefik.http.middlewares.nuclic-headers.headers.referrerPolicy=strict-origin-when-cross-origin"
+      - "traefik.http.routers.nuclic.middlewares=nuclic-headers"

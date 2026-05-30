@@ -1,0 +1,81 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nuclic
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nuclic-website
+  namespace: nuclic
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nuclic-website
+  template:
+    metadata:
+      labels:
+        app: nuclic-website
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+      containers:
+        - name: nuclic-website
+          image: nuclic-website:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "50m"
+            limits:
+              memory: "128Mi"
+              cpu: "200m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nuclic-website
+  namespace: nuclic
+spec:
+  selector:
+    app: nuclic-website
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: security-headers
+  namespace: nuclic
+spec:
+  headers:
+    frameDeny: true
+    contentTypeNosniff: true
+    browserXssFilter: true
+    referrerPolicy: "strict-origin-when-cross-origin"
+    customResponseHeaders:
+      X-Robots-Tag: "index, follow"
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: nuclic-website
+  namespace: nuclic
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: Host(`nuclic.sobral.ufc.br`)
+      kind: Rule
+      services:
+        - name: nuclic-website
+          port: 80
+      middlewares:
+        - name: security-headers
